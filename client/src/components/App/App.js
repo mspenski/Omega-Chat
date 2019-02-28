@@ -10,6 +10,9 @@ import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
 import Secret from '../../pages/Secret/Secret';
 import Home from '../../pages/Home/Home';
+import Calendar from '../../pages/Calendar/Calendar';
+import MessageBoard from '../../pages/MessageBoard/MessageBoard';
+import Roster from '../../pages/Roster/Roster';
 import NotFound from '../../pages/NotFound/NotFound';
 
 import './App.css';
@@ -59,6 +62,9 @@ class App extends Component {
               <Route path='/register' component={Register} />
               <PrivateRoute path='/secret' component={Secret} />
               <Route exact path='/' component={Home} />
+              <Route exact path='/calendar' component={Calendar} />
+              <Route exact path='/roster' component={Roster} />
+              <Route exact path='/messageboard' component={MessageBoard} />
               <Route component={NotFound} />
             </Switch>
           </div>
