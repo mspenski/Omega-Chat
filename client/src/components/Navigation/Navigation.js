@@ -39,13 +39,13 @@ class Navigation extends Component {
                 <Link className='nav-link' to='/' onClick={this.toggleCollapse}>Home</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link' to='/' onClick={this.toggleCollapse}>Roster</Link>
+                <Link className='nav-link' to='/roster' onClick={this.toggleCollapse}>Roster</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link' to='/' onClick={this.toggleCollapse}>Calendar</Link>
+                <Link className='nav-link' to='/calendar' onClick={this.toggleCollapse}>Calendar</Link>
               </li>
               <li className='nav-item'>
-                <Link className='nav-link' to='/' onClick={this.toggleCollapse}>Message Board</Link>
+                <Link className='nav-link' to='/messageboard' onClick={this.toggleCollapse}>Message Board</Link>
               </li>
               {user &&
                 <li className='nav-item'>
