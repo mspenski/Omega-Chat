@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import AuthContext from '../../contexts/AuthContext';
 import AuthDropdown from '../../components/AuthDropdown/AuthDropdown';
 
+import './Navigation.css';
+
 class Navigation extends Component {
   static contextType = AuthContext;
 
