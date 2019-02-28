@@ -5,7 +5,7 @@ class MessageBoard extends Component {
 
   render() {
     return (
-      <p> hello</p>
+      <h1>Message Board</h1>
     );
   }
 }

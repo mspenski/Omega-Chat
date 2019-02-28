@@ -5,7 +5,7 @@ class Calendar extends Component {
 
   render() {
     return (
-      <p> hello</p>
+      <h1>Calendar</h1>
     );
   }
 }
