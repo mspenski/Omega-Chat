@@ -6,7 +6,9 @@ class Roster extends Component {
 
   render() {
     return (
+      
       <div className="container">
+      <h3>Leadership Team</h3>
         <div className="row">
           <div className="col-sm-2">
             <div className="card">
@@ -86,35 +88,35 @@ class Roster extends Component {
 <br></br>
 <br></br>
 
-<p>The Brotherhood</p>
+<h3>The Brotherhood</h3>
   <div class="container">
-  <table class="table">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <th scope="row">Steve Shannon</th>
+        <td>Freshman</td>
+        <td>919-265-9477</td>
+        <td>sshann30@gmail.com</td>
       </tr>
       <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+        <th scope="row">Brandon Wiggins</th>
+        <td>Sophmore</td>
+        <td>847-524-2107</td>
+        <td>bradnon@yahoo.com</td>
       </tr>
       <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+        <th scope="row">Bill Walsh</th>
+        <td>Junior</td>
+        <td>803-867-5309</td>
+        <td>Bill@me.com</td>
       </tr>
     </tbody>
   </table>
