@@ -58,13 +58,14 @@ class App extends Component {
           <Navigation />
           <div className='container'>
             <Switch>
-              <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <PrivateRoute path='/secret' component={Secret} />
               <Route exact path='/' component={Home} />
-              <Route exact path='/calendar' component={Calendar} />
-              <Route exact path='/roster' component={Roster} />
-              <Route exact path='/messageboard' component={MessageBoard} />
+              <PrivateRoute exact path='/home' component={Home} />
+              <Route exact path='/login' component={Login} />
+              <PrivateRoute exact path='/calendar' component={Calendar} />
+              <PrivateRoute exact path='/roster' component={Roster} />
+              <PrivateRoute exact path='/messageboard' component={MessageBoard} />
               <Route component={NotFound} />
             </Switch>
           </div>
