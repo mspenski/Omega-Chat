@@ -25,9 +25,9 @@ usersController.post('/login', (req, res) => {
 });
 
 usersController.post('/register', (req, res) => {
-  const { email, password } = req.body;
-
-  db.Users.create({ email, password })
+  const { email, password, fullName, phone, position } = req.body;
+  console.log(email, password, fullName, phone, position)
+  db.Users.create({ email, password, fullName, phone, position })
     .then(user => res.json(user))
     .catch(err => res.json(err));
 });
