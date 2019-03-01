@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mitchell from './images/mitchell.png';
 
 
 class Roster extends Component {
@@ -12,73 +13,55 @@ class Roster extends Component {
         <div className="row">
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="Treasurer" />
+              <img src= {mitchell} height = "100px" width = "100px" alt="Treasurer" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">Treasurer</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="External VP" />
+            <img src= {mitchell} height = "100px" width = "100px" alt="External VP" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">External VP</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="President" />
+            <img src= {mitchell} height = "100px" width = "100px" alt="President" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="Internal VP" />
+            <img src= {mitchell} height = "100px" width = "100px" alt="Internal VP" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">Internal VP</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="Secretary" />
+            <img src= {mitchell} height = "100px" width = "100px" alt="Secretary" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">Secretary</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
           <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="Rush Chair" />
+            <img src= {mitchell} height = "100px" width = "100px" alt="Rush Chair" />
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">Rush Chair</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
