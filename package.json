@@ -11,5 +11,10 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "moment": "^2.24.0",
+    "react-big-calendar": "^0.20.3",
+    "react-moment": "^0.8.4"
   }
 }

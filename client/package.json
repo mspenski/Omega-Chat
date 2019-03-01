@@ -5,7 +5,9 @@
   "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.18.0",
+    "moment": "^2.24.0",
     "react": "^16.8.3",
+    "react-big-calendar": "^0.20.3",
     "react-dom": "^16.8.3",
     "react-gravatar": "^2.6.3",
     "react-router": "^4.3.1",

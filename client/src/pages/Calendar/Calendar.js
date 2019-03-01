@@ -1,13 +1,27 @@
-import React, { Component } from 'react';
+import React from "react";
+import BigCalendar from "react-big-calendar";
+import moment from "moment";
 
-class Calendar extends Component {
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
+const localizer = BigCalendar.momentLocalizer(moment);
 
-  render() {
-    return (
-      <h1>Calendar</h1>
-    );
+const styles = {
+  Calendar: {
+    height: "100vh"
   }
-}
+};
+
+const Calendar = props => (
+  <div style={styles.Calendar}>
+    <BigCalendar
+      localizer={localizer}
+      events={[]}
+      startAccessor="start"
+      endAccessor="end"
+    />
+  </div>
+);
 
 export default Calendar;
+
