@@ -31,7 +31,7 @@ class RegisterForm extends Component {
             <form className='LoginForm' onSubmit={this.handleSubmit}>
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
-                  <span className="input-group-text">@</span>
+                  <span className="input-group-text">Email</span>
                 </div>
                 <input
                   className='form-control'
@@ -46,7 +46,7 @@ class RegisterForm extends Component {
 
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
-                  <span className="input-group-text">a3b</span>
+                  <span className="input-group-text">Password</span>
                 </div>
                 <input
                   className='form-control'

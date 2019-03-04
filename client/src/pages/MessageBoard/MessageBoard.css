@@ -1,0 +1,18 @@
+h1 {
+}
+
+button{
+    margin: 8px;
+  }
+
+.message {
+    background-image: url(./backMessage.jpg)
+}
+
+.card-body {
+    background-image: url(./wood.jpg)
+}
+
+p {
+    background-color: #a7a7a7
+}

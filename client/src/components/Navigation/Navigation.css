@@ -41,6 +41,6 @@
   -moz-box-shadow:    1px 3px 20px #e7e7e7;
   box-shadow:         1px 3px 20px #e7e7e7;
   z-index:999;
-  background-color: #c5c5c570;
-  background-image: url(./interlaced.png)
+  background-image: url(./interlaced.png);
+  background-color: #c5c5c57a;
 }
