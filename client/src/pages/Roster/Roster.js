@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import mitchell from './images/mitchell.png';
-import Leadership from './images/LeadershipTeam.png';
-import Brotherhood from './images/TheBrotherhood.png';
 import './Roster.css';
 import Particles from 'react-particles-js';
  
@@ -35,9 +33,7 @@ class Roster extends Component {
       <div className="container">
         <br></br>
         <div className='navbar-brand logo' to='#'>Leadership Team</div>
-        <br></br>
-        <br></br>
-        <img src={Leadership} height="50px" width="650px" alt="Leadership" />
+       
         <br></br>
         <br></br>
         <br></br>
@@ -123,9 +119,6 @@ class Roster extends Component {
 
         <div className="container">
         <div className='navbar-brand logo' to='#'>The Brotherhood</div>
-        <br></br>
-        <br></br>
-        <img src={Brotherhood} height="50px" width="650px" alt="Brotherhood" />
         <br></br>
         <br></br>
         <br></br>
