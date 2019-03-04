@@ -55,11 +55,7 @@ class RegisterForm extends Component {
 
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
-<<<<<<< HEAD
-                  <span className="input-group-text">Password</span>
-=======
                   <span className="input-group-text">PW</span>
->>>>>>> 8fa9e9b4c6319112d48440c545ad1071403c74e1
                 </div>
                 <input
                   className='form-control'
