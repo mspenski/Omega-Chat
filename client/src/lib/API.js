@@ -15,6 +15,9 @@ export default {
     },
     register: function (email, password, fullName, phone, position) {
       return axios.post('/api/users/register', { email, password, fullName, phone, position });
+    },
+    getRoster: function (fullName, position, phone, email) {
+      return axios.get('/api/users/roster', { fullName, position, phone, email })
     }
   },
 
