@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
 import mitchell from './images/mitchell.png';
-import Leadership from './images/LeadershipTeam.png';
-import Brotherhood from './images/TheBrotherhood.png';
 import './Roster.css';
-class Roster extends Component {
+import Particles from 'react-particles-js';
+ 
+class App extends Component{
+  
+    render(){
+        return (
+            <Particles 
+                params={{
+                    polygon: {
+                        enable: true,
+                        type: 'inside',
+                        move: {
+                            radius: 10
+                        },
+                        url: 'path/to/svg.svg'
+                    }
+                }} />
+        );
+    };
+ 
+}
 
+
+class Roster extends Component {
+  
 
   render() {
     return (
 
       <div className="container">
         <br></br>
-        <div className='navbar-brand logo' to='#'>Ωmega Chat</div>
-        <img src={Leadership} height="50px" width="650px" alt="Leadership" />
+        <div className='navbar-brand logo' to='#'>Leadership Team</div>
+       
         <br></br>
         <br></br>
         <br></br>
@@ -97,7 +118,7 @@ class Roster extends Component {
         <br></br>
 
         <div className="container">
-        <img src={Brotherhood} height="50px" width="650px" alt="Leadership" />
+        <div className='navbar-brand logo' to='#'>The Brotherhood</div>
         <br></br>
         <br></br>
         <br></br>
@@ -135,6 +156,7 @@ class Roster extends Component {
           </table>
         </div>
       </div>
+      
       </div>
 
 
