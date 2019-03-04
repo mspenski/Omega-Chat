@@ -1,27 +1,7 @@
 import React, { Component } from 'react';
 import mitchell from './images/mitchell.png';
 import './Roster.css';
-import Particles from 'react-particles-js';
  
-class App extends Component{
-  
-    render(){
-        return (
-            <Particles 
-                params={{
-                    polygon: {
-                        enable: true,
-                        type: 'inside',
-                        move: {
-                            radius: 10
-                        },
-                        url: 'path/to/svg.svg'
-                    }
-                }} />
-        );
-    };
- 
-}
 
 
 class Roster extends Component {
@@ -112,12 +92,13 @@ class Roster extends Component {
             </div>
           </div>
         </div>
+        
 
 
         <br></br>
         <br></br>
 
-        <div className="container">
+        <div className="flexbox">
         <div className='navbar-brand logo' to='#'>The Brotherhood</div>
         <br></br>
         <br></br>
