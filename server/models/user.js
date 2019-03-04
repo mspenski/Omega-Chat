@@ -48,7 +48,7 @@ class newUser {
     this.password = password;
     this.fullName = fullName;
     this.phone = phone;
-    this.position ? position : 'Member';
+    this.position = position;
   }
 
   comparePassword(challenge) {
