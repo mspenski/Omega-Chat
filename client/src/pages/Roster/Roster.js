@@ -1,136 +1,143 @@
 import React, { Component } from 'react';
-
+import mitchell from './images/mitchell.png';
+import Leadership from './images/LeadershipTeam.png';
+import Brotherhood from './images/TheBrotherhood.png';
+import './Roster.css';
 class Roster extends Component {
 
 
   render() {
     return (
-      <div>
-        <h2>Executive Board</h2>
-        <p>The leadership team of [insert frat here]</p>
+
+      <div className="container">
+        <br></br>
+        <div className='navbar-brand logo' to='#'>Ωmega Chat</div>
+        <img src={Leadership} height="50px" width="650px" alt="Leadership" />
+        <br></br>
+        <br></br>
         <br></br>
 
-        <div className="row">
-          <div className="column">
+       <div className="row">
+          <div className="col-sm-2">
             <div className="card">
-              <img src="/css/mitchell.png" alt="President"  />
+            <br></br>
+              <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px" alt="Treasurer" />
+              </p>
               <div className="container">
-                <h2>Mitchell Spenski</h2>
+                <h6>Mitchell Spenski</h6>
+                <p className="title">Treasurer</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-2">
+            <div className="card">
+            <br></br>
+            <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px"  alt="External VP" />
+              </p>
+              <div className="container">
+                <h6>Mitchell Spenski</h6>
+                <p className="title">External VP</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-2">
+            <div className="card">
+            <br></br>
+            <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px" alt="President" />
+              </p>
+              <div className="container">
+                <h6>Mitchell Spenski</h6>
                 <p className="title">President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
               </div>
             </div>
           </div>
-
-          <div className="column">
+          <div className="col-sm-2">
             <div className="card">
-              <img src="/w3images/team2.jpg" alt="Vice President"  />
+            <br></br>
+            <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px" alt="Internal VP" />
+              </p>
               <div className="container">
-                <h2>Steve Shannon</h2>
-                <p className="title">Vice President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
+                <h6>Mitchell Spenski</h6>
+                <p className="title">Internal VP</p>
               </div>
             </div>
           </div>
-          <div className="column">
+          <div className="col-sm-2">
             <div className="card">
-              <img src="/w3images/team3.jpg" alt="Secretary"  />
+            <br></br>
+            <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px" alt="Secretary" />
+              </p>
               <div className="container">
-                <h2>Brandon Wiggins</h2>
+                <h6>Mitchell Spenski</h6>
                 <p className="title">Secretary</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-2">
+            <div className="card">
+            <br></br>
+            <p class="aligncenter">
+                <img src={mitchell} height="100px" width="100px" alt="Rush Chair" />
+              </p>
+              <div className="container">
+                <h6>Mitchell Spenski</h6>
+                <p className="title">Rush Chair</p>
               </div>
             </div>
           </div>
         </div>
+
+
+        <br></br>
         <br></br>
 
-        <h3>The brothers of [insert frat here]</h3>
+        <div className="container">
+        <img src={Brotherhood} height="50px" width="650px" alt="Leadership" />
         <br></br>
-        <div className="row">
-          <div className="column">
-            <div className="card">
-              <img src="/css/mitchell.png" alt="President"  />
-              <div className="container">
-                <h2>Mitchell Spenski</h2>
-                <p className="title">President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
+        <br></br>
+        <br></br>
 
-          <div className="column">
-            <div className="card">
-              <img src="/w3images/team2.jpg" alt="Vice President"  />
-              <div className="container">
-                <h2>Steve Shannon</h2>
-                <p className="title">Vice President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="card">
-              <img src="/w3images/team3.jpg" alt="Secretary"  />
-              <div className="container">
-                <h2>Brandon Wiggins</h2>
-                <p className="title">Secretary</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="column">
-            <div className="card">
-              <img src="/css/mitchell.png" alt="President"  />
-              <div className="container">
-                <h2>Mitchell Spenski</h2>
-                <p className="title">President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="card">
-              <img src="/w3images/team2.jpg" alt="Vice President"  />
-              <div className="container">
-                <h2>Steve Shannon</h2>
-                <p className="title">Vice President</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
-          <div className="column">
-            <div className="card">
-              <img src="/w3images/team3.jpg" alt="Secretary"  />
-              <div className="container">
-                <h2>Brandon Wiggins</h2>
-                <p className="title">Secretary</p>
-                <p>A proud member of the Omega Chat team</p>
-                <p>email here</p>
-                <p><button className="button">Contact</button></p>
-              </div>
-            </div>
-          </div>
+        <div class="container">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Steve Shannon</th>
+                <td>Freshman</td>
+                <td>919-265-9477</td>
+                <td>sshann30@gmail.com</td>
+              </tr>
+              <tr>
+                <th scope="row">Brandon Wiggins</th>
+                <td>Sophmore</td>
+                <td>847-524-2107</td>
+                <td>bradnon@yahoo.com</td>
+              </tr>
+              <tr>
+                <th scope="row">Bill Walsh</th>
+                <td>Junior</td>
+                <td>803-867-5309</td>
+                <td>Bill@me.com</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      </div>
+
+
     );
   }
 }
