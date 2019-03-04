@@ -18,13 +18,37 @@ const UserSchema = new Schema({
       'Password should be four characters or longer'
     ]
   },
+  fullName: {
+    type: String,
+    trim: true,
+    required: 'First & last name required,'
+  },
+  phone: {
+    type: String,
+    trim: true,
+    required: 'Phone # is required in format XXX-XXX-XXXX',
+    // validate: [
+    //   function (input) {
+    //     return input.length === 12;
+    //   },
+    //   'Format must be 111-222-3333'
+    // ]
+  },
+  position: {
+    type: String,
+    trim: true,
+    default: 'Brother'
+  }
 })
 
 class newUser {
-  constructor({ id, email, password }) {
+  constructor({ id, email, password, fullName, phone, position }) {
     this.id = id;
     this.email = email;
     this.password = password;
+    this.fullName = fullName;
+    this.phone = phone;
+    this.position = position;
   }
 
   comparePassword(challenge) {
