@@ -1,23 +1,46 @@
 import React, { Component } from 'react';
-import mitchell from './images/mitchell.png';
+import API from '../../lib/API.js'
 import './Roster.css';
+<<<<<<< HEAD
  
+=======
+// // import Particles from 'react-particles-js';
+
+// class App extends Component{
+
+//     render(){
+//         return (
+//             <Particles 
+//                 params={{
+//                     polygon: {
+//                         enable: true,
+//                         type: 'inside',
+//                         move: {
+//                             radius: 10
+//                         },
+//                         url: 'path/to/svg.svg'
+//                     }
+//                 }} />
+//         );
+//     };
+
+// }
+
+
+>>>>>>> 8f3e6c3120f643c51e709af29801bd1c5a6e74c7
 
 
 class Roster extends Component {
-  
 
-  render() {
-    return (
+  state = {
+    users: []
+  }
 
-      <div className="container">
-        <br></br>
-        <div className='navbar-brand logo' to='#'>Leadership Team</div>
-       
-        <br></br>
-        <br></br>
-        <br></br>
+  componentDidMount = () => {
+    this.getUsers();
+  }
 
+<<<<<<< HEAD
        <div className="row">
           <div className="col-sm-2">
             <div className="card">
@@ -93,51 +116,59 @@ class Roster extends Component {
           </div>
         </div>
         
+=======
+  getUsers = () => {
+    API.Users.getRoster()
+      .then(res => this.setState({ users: res.data }))
+>>>>>>> 8f3e6c3120f643c51e709af29801bd1c5a6e74c7
 
+  }
 
+  render() {
+    console.log(this.state)
+    return (
+      <div className="container">
         <br></br>
-        <br></br>
 
+<<<<<<< HEAD
         <div className="flexbox">
         <div className='navbar-brand logo' to='#'>The Brotherhood</div>
         <br></br>
         <br></br>
         <br></br>
+=======
+        <div className="container">
+          <div className='navbar-brand logo' to='#'>The Brotherhood</div>
+          <br></br>
+          <br></br>
+          <br></br>
+>>>>>>> 8f3e6c3120f643c51e709af29801bd1c5a6e74c7
 
-        <div class="container">
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Position</th>
-                <th scope="col">Phone</th>
-                <th scope="col">Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Steve Shannon</th>
-                <td>Freshman</td>
-                <td>919-265-9477</td>
-                <td>sshann30@gmail.com</td>
-              </tr>
-              <tr>
-                <th scope="row">Brandon Wiggins</th>
-                <td>Sophmore</td>
-                <td>847-524-2107</td>
-                <td>bradnon@yahoo.com</td>
-              </tr>
-              <tr>
-                <th scope="row">Bill Walsh</th>
-                <td>Junior</td>
-                <td>803-867-5309</td>
-                <td>Bill@me.com</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="container">
+            <table className="table table-bordered table-hover" id="roster">
+              <thead>
+                <tr>
+                  <th scope="col" id="roster-name">Name</th>
+                  <th scope="col" id="roster-position">Position</th>
+                  <th scope="col" id="roster-phone">Phone</th>
+                  <th scope="col" id="roster-email">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* db results go here */}
+                {this.state.users.map(user => (
+                  <tr key={user.email}>
+                    <td>{user.fullName}</td>
+                    <td>{user.position}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.email}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      
+
       </div>
 
 

@@ -32,4 +32,11 @@ usersController.post('/register', (req, res) => {
     .catch(err => res.json(err));
 });
 
+usersController.get('/roster', (req, res) => {
+  db.Users.find({})
+    .then(users => {
+      res.json(users)
+    })
+})
+
 module.exports = usersController;
