@@ -3,26 +3,35 @@ import React, { Component } from 'react';
 class RegisterForm extends Component {
   state = {
     email: '',
-    password: ''
+    password: '',
+    fullName: '',
+    phone: '',
+    position: ''
   };
 
   handleInputChange = event => {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+    if (event.target.name === 'phone') {
+      if (event.target.value.length === 3 || event.target.value.length === 7) {
+        value += '-'
+      }
+    }
 
     this.setState({
       [name]: value
     });
+
   }
 
   handleSubmit = event => {
-    const { email, password } = this.state;
+    const { email, password, fullName, phone, position } = this.state;
 
-    this.props.onSubmit(email, password);
+    this.props.onSubmit(email, password, fullName, phone, position);
     event.preventDefault();
   }
 
   render() {
-    const { email, password } = this.state;
+    const { email, password, fullName, phone, position } = this.state;
 
     return (
       <div className='RegisterForm'>
@@ -46,7 +55,11 @@ class RegisterForm extends Component {
 
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
+<<<<<<< HEAD
                   <span className="input-group-text">Password</span>
+=======
+                  <span className="input-group-text">PW</span>
+>>>>>>> 8fa9e9b4c6319112d48440c545ad1071403c74e1
                 </div>
                 <input
                   className='form-control'
@@ -58,6 +71,53 @@ class RegisterForm extends Component {
                   onChange={this.handleInputChange}
                 />
               </div>
+              <div className='input-group mb-3'>
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Name</span>
+                </div>
+                <input
+                  className='form-control'
+                  id='fullName'
+                  type='text'
+                  name='fullName'
+                  placeholder='Full Name'
+                  value={fullName}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className='input-group mb-3'>
+                <div className="input-group-prepend">
+                  <span className="input-group-text">#</span>
+                </div>
+                <input
+                  className='form-control'
+                  id='phone'
+                  type='text'
+                  name='phone'
+                  placeholder='ex. XXX-XXX-XXXX'
+                  value={phone}
+                  onKeyUp={this.onKeyUp}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className='input-group mb-3'>
+                <div className="input-group-prepend">
+                  <span className="input-group-text">Position</span>
+                </div>
+                <input
+                  className='form-control'
+                  id='position'
+                  type='text'
+                  name='position'
+                  placeholder='Position (if applicable)'
+                  value={position}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+
 
               <button className='btn btn-primary' type='submit'>Register</button>
             </form>
