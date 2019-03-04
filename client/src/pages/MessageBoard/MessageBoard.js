@@ -7,14 +7,15 @@ class MessageBoard extends Component {
     return (
      <> 
      <div calssName="message">
-      <h1>Message Board</h1>
+     <br></br>
+     <div className='navbar-brand logo' to='#'>Message Board</div>
 
       <div className="container">
     <div className="row">
       <div className="col-lg-12 mt-5">
         <form className="card">
           <div className="card-body">
-            <h2>Add a new post</h2>
+          <div className='navbar-brand logo' to='#'>Add a new post</div>
             <div className="form-group">
               <input type="text" id="post-text" className="form-control" placeholder="Title"></input>
             </div>
@@ -29,7 +30,7 @@ class MessageBoard extends Component {
       <div className="col-lg-12 mt-5">
 
         <div className="page-header">
-          <h1>Recent Posts</h1>
+             <div className='navbar-brand logo' to='#'>Recent Posts</div>
         </div>
         <div className="posts">
         <form className="card beer-form">

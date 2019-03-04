@@ -8,8 +8,14 @@ class HomePage extends Component {
       <div className='Home'>
         <div className='row'>
           <div className='col'>
-            <h1>Welcome to Ωmega Chat</h1>
-            <h6>------Insert app description-------</h6>
+            
+            <br></br>
+     <div className='navbar-brand logo' to='#'>Welcome to Ωmega Chat</div>
+     <br></br>
+     <div className='navbar-brand logo' to='#'>Our Fraternity Networking App</div>
+     <br></br>
+     <br></br>
+     <div className='navbar-brand logo' to='#'>Connected Brothership</div>
           </div>
         </div>
       </div>
