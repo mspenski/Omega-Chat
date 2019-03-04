@@ -37,7 +37,7 @@ const UserSchema = new Schema({
   position: {
     type: String,
     trim: true,
-    default: 'Brother'
+    default: 'Member'
   }
 })
 
