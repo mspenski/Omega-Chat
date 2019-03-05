@@ -40,6 +40,6 @@ usersController.get('/roster', (req, res) => {
     .then(users => {
       res.json(users)
     })
-})
+});
 
 module.exports = usersController;
