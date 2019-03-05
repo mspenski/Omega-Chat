@@ -27,7 +27,7 @@ class HomePage extends Component {
                   <div className="row">
                     <div className="col-sm-6">
                       <div className="img-wrapper">
-                        <img src="http://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/Q-Z/siberian-tiger-profile.jpg" />
+                        <img src="https://www.plitvice-etnogarden.com/wp-content/uploads/2018/02/Etno-Garden-Plitvice-Lakes-Team-Building-ruke.jpg" />
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -42,7 +42,7 @@ class HomePage extends Component {
                   <div className="row">
                     <div className="col-sm-6">
                       <div className="img-wrapper">
-                        <img src="http://www.govisitcostarica.com/images/photos/full-hot-air-balloons-near-arenal.jpg" />
+                        <img src="https://blog.hootsuite.com/wp-content/uploads/2017/06/social-media-content-calendar-940x470.jpg" />
                       </div>
                     </div>
                     <div className="col-sm-6">
@@ -57,7 +57,7 @@ class HomePage extends Component {
                   <div className="row">
                     <div className="col-sm-6">
                       <div className="img-wrapper">
-                        <img src="http://www.earthrandom.com/wp-content/uploads/2013/01/Virginia1.jpg" />
+                        <img src="https://www.containerstore.com/catalogimages/333548/10073204-felt-message-board.jpg?width=1200&height=1200&align=center" />
                       </div>
                     </div>
                     <div className="col-sm-6">
