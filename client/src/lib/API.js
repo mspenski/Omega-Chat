@@ -34,6 +34,9 @@ export default {
   Posts: {
     getPosts: function (title, post, date) {
       return axios.get('/api/posts', { title, post, date })
+    },
+    sendPosts: function (title, post) {
+      return axios.post('/api/posts', { title, post })
     }
   }
 }

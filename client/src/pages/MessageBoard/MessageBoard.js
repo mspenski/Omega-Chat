@@ -6,7 +6,17 @@ import './MessageBoard.css'
 
 class MessageBoard extends Component {
   state = {
+    title: '',
+    post: '',
     posts: []
+  }
+
+  handleInputChange = event => {
+    let { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    })
   }
 
   componentDidMount = () => {
@@ -14,13 +24,19 @@ class MessageBoard extends Component {
   }
 
   getPosts = () => {
-    API.Posts.getPosts()
+    API.Posts.getPosts(this.state.title, this.state.post)
       .then(res => this.setState({ posts: res.data }))
 
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    API.Posts.sendPosts(this.state.title, this.state.post)
+      .then(res => console.log(res));
+  }
 
   render() {
+    const { title, post } = this.state
     return (
       <>
         <div className="message">
@@ -34,12 +50,31 @@ class MessageBoard extends Component {
                   <div className="card-body">
                     <div className='navbar-brand logo' to='#'>Add a new post</div>
                     <div className="form-group">
-                      <input type="text" id="post-title" className="form-control" placeholder="Title"></input>
+
+                      <input
+                        type="text"
+                        id="post-title"
+                        name="title"
+                        value={title}
+                        onChange={this.handleInputChange}
+                        className="form-control"
+                        placeholder="Title"
+                      />
+
                     </div>
                     <div className="form-group">
-                      <textarea className="form-control" id="exampleFormControlTextarea1 post-text" rows="3" placeholder="Post"></textarea>
+                      <textarea
+                        className="form-control"
+                        id="exampleFormControlTextarea1 post-text"
+                        rows="3"
+                        placeholder="Post"
+                        name="post"
+                        value={post}
+                        onChange={this.handleInputChange}
+                      />
+
                     </div>
-                    <button type="button" id="post-button" className="btn btn-primary add-post">Post</button>
+                    <button onClick={this.handleSubmit} id="post-button" className="btn btn-primary add-post">Post</button>
                   </div>
                 </form>
 
@@ -47,13 +82,18 @@ class MessageBoard extends Component {
               <div className="col-lg-12 mt-5">
 
                 <div className="page-header">
-                  <div className='navbar-brand logo' to='#'>Recent Posts</div>
+                  <div className='navbar-brand logo' to='#'>Posts</div>
                 </div>
                 <div className="posts">
                   <form className="card beer-form">
                     <div className="card-body">
                       <div className="form-group">
-                        <p>This is a story all about how my life got twisted upside down, And I'd like to take a minute just sit right there, I'll tell you how I became the prince of a town called Bel-Air</p>
+                        {this.state.posts.map(newPost => (
+                          <p key={newPost.id}>
+                            <h4>{newPost.title}</h4>
+                            {newPost.text}
+                          </p>
+                        ))}
                       </div>
                       <button type="button" id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
                       <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
