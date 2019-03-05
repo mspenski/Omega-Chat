@@ -14,14 +14,14 @@ postsController.post('/', (req, res) => {
     .catch(err => res.json(err));
 });
 
-postsController.post('/reply',
+postsController.post('/:id/replies',
   JWTVerifier,
   (req, res) => {
     const { fullName, text } = req.body;
     console.log('working')
 
     db.Posts.findByIdAndUpdate(
-      { _id: "5c7e9ccdc57b75938bfc174f" },
+      { _id: req.params.id },
       { $push: { replies: { fullName, text } } },
       { safe: true, upsert: true },
       function (err, doc) {

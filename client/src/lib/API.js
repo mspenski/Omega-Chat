@@ -32,8 +32,12 @@ export default {
   },
 
   Posts: {
-    getPosts: function (title, post, date) {
-      return axios.get('/api/posts', { title, post, date })
+    getPosts: function (authToken) {
+      return axios.get('/api/posts', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
     },
     sendPosts: function (title, post) {
       return axios.post('/api/posts', { title, post })

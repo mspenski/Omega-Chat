@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import API from '../../lib/API.js'
 import './MessageBoard.css'
 
-
+import AuthContext from '../../contexts/AuthContext'
 
 class MessageBoard extends Component {
+  static contextType = AuthContext;
+
   state = {
     title: '',
     post: '',
@@ -24,7 +26,7 @@ class MessageBoard extends Component {
   }
 
   getPosts = () => {
-    API.Posts.getPosts(this.state.title, this.state.post)
+    API.Posts.getPosts(this.context.authToken)
       .then(res => this.setState({ posts: res.data }))
 
   }
@@ -91,14 +93,14 @@ class MessageBoard extends Component {
                         {this.state.posts.map(newPost => (
                           <p key={newPost.id}>
                             <h4>{newPost.title}</h4>
-                            {newPost.text}
+                            {newPost.text}<br />
+                            <button type="button" id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
+                            <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
+                            <button type="button" id="like-button" className="btn btn-success like mb-2"><i className="far fa-thumbs-up"></i> Like</button>
+                            <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button>
                           </p>
                         ))}
                       </div>
-                      <button type="button" id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
-                      <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
-                      <button type="button" id="like-button" className="btn btn-success like mb-2"><i className="far fa-thumbs-up"></i> Like</button>
-                      <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button>
                     </div>
                   </form>
                 </div>
