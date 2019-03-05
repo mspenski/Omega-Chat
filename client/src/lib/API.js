@@ -32,8 +32,8 @@ export default {
   },
 
   Posts: {
-    getPosts: function (title, post, replies) {
-      return axios.get('/api/posts', { title, post, replies })
+    getPosts: function (title, post, date) {
+      return axios.get('/api/posts', { title, post, date })
     }
   }
 }

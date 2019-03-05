@@ -5,6 +5,19 @@ import './MessageBoard.css'
 
 
 class MessageBoard extends Component {
+  state = {
+    posts: []
+  }
+
+  componentDidMount = () => {
+    this.getPosts();
+  }
+
+  getPosts = () => {
+    API.Posts.getPosts()
+      .then(res => this.setState({ posts: res.data }))
+
+  }
 
 
   render() {
@@ -21,10 +34,10 @@ class MessageBoard extends Component {
                   <div className="card-body">
                     <div className='navbar-brand logo' to='#'>Add a new post</div>
                     <div className="form-group">
-                      <input type="text" id="post-text" className="form-control" placeholder="Title"></input>
+                      <input type="text" id="post-title" className="form-control" placeholder="Title"></input>
                     </div>
                     <div className="form-group">
-                      <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Post"></textarea>
+                      <textarea className="form-control" id="exampleFormControlTextarea1 post-text" rows="3" placeholder="Post"></textarea>
                     </div>
                     <button type="button" id="post-button" className="btn btn-primary add-post">Post</button>
                   </div>
