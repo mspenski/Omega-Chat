@@ -1,6 +1,7 @@
-const User = require('./user');
+// const User = require('./user');
 
 module.exports = {
   Users: require('./user'),
-  Secrets: require('./secret')
+  Secrets: require('./secret'),
+  Posts: require('./post')
 }

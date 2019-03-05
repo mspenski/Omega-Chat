@@ -12,19 +12,26 @@ class RegisterForm extends Component {
   handleInputChange = event => {
     let { name, value } = event.target;
     if (event.target.name === 'phone') {
-      if (event.target.value.length === 3 || event.target.value.length === 7) {
-        value += '-'
+      if (event.target.value.length < 13) {
+        if (event.target.value.length === 3 || event.target.value.length === 7) {
+          value += '-'
+        }
+        this.setState({
+          [name]: value
+        });
       }
+    } else {
+      this.setState({
+        [name]: value
+      });
     }
 
-    this.setState({
-      [name]: value
-    });
 
   }
 
   handleSubmit = event => {
     const { email, password, fullName, phone, position } = this.state;
+
 
     this.props.onSubmit(email, password, fullName, phone, position);
     event.preventDefault();

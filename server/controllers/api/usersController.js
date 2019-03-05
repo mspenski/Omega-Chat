@@ -25,7 +25,10 @@ usersController.post('/login', (req, res) => {
 });
 
 usersController.post('/register', (req, res) => {
-  const { email, password, fullName, phone, position } = req.body;
+  let { email, password, fullName, phone, position } = req.body;
+  if (!position || position === "") {
+    position = 'Member'
+  }
   console.log(email, password, fullName, phone, position)
   db.Users.create({ email, password, fullName, phone, position })
     .then(user => res.json(user))
@@ -37,6 +40,6 @@ usersController.get('/roster', (req, res) => {
     .then(users => {
       res.json(users)
     })
-})
+});
 
 module.exports = usersController;
