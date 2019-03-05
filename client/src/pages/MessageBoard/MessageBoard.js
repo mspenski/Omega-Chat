@@ -10,7 +10,8 @@ class MessageBoard extends Component {
   state = {
     title: '',
     post: '',
-    posts: []
+    posts: [],
+    reply: ''
   }
 
   handleInputChange = event => {
@@ -28,7 +29,6 @@ class MessageBoard extends Component {
   getPosts = () => {
     API.Posts.getPosts(this.context.authToken)
       .then(res => this.setState({ posts: res.data }))
-
   }
 
   handleSubmit = event => {
@@ -37,8 +37,13 @@ class MessageBoard extends Component {
       .then(res => console.log(res));
   }
 
+  handleReply = (event, id) => {
+    event.preventDefault();
+    API.Replies.sendReply(this.state.text, id)
+  }
+
   render() {
-    const { title, post } = this.state
+    const { title, post, reply } = this.state
     return (
       <>
         <div className="message">
@@ -94,10 +99,18 @@ class MessageBoard extends Component {
                           <p key={newPost.id}>
                             <h4>{newPost.title}</h4>
                             {newPost.text}<br />
-                            <button type="button" id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
-                            <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
+                            <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
+                            <input
+                              type="text"
+                              id="post-reply"
+                              name="Reply"
+                              value={reply}
+                              onChange={this.handleInputChange}
+                              className="form-control"
+                              placeholder="Type response here"></input>
+                            {/* <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
                             <button type="button" id="like-button" className="btn btn-success like mb-2"><i className="far fa-thumbs-up"></i> Like</button>
-                            <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button>
+                            <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button> */}
                           </p>
                         ))}
                       </div>

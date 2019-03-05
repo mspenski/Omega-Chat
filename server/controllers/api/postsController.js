@@ -14,6 +14,18 @@ postsController.post('/', (req, res) => {
     .catch(err => res.json(err));
 });
 
+postsController.get('/',
+  JWTVerifier,
+  (req, res) => {
+    db.Posts.find({})
+      .then(results => {
+        res.json(results);
+      })
+      .catch(error => {
+        if (error) throw error
+      })
+  });
+
 postsController.post('/:id/replies',
   JWTVerifier,
   (req, res) => {
@@ -37,17 +49,5 @@ postsController.post('/:id/replies',
     )
   });
 
-
-postsController.get('/',
-  JWTVerifier,
-  (req, res) => {
-    db.Posts.find({})
-      .then(results => {
-        res.json(results);
-      })
-      .catch(error => {
-        if (error) throw error
-      })
-  });
 
 module.exports = postsController;

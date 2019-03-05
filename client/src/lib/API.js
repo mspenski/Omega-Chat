@@ -42,5 +42,19 @@ export default {
     sendPosts: function (title, post) {
       return axios.post('/api/posts', { title, post })
     }
+  },
+
+  Replies: {
+    getReplies: function (authToken, id) {
+      return axios.get(`/${id}/replies`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
+    },
+
+    sendReply: function (fullName, text, id) {
+      return axios.post(`/${id}/replies`, { fullName, text })
+    }
   }
 }
