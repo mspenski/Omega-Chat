@@ -1,6 +1,6 @@
 .logo {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 25px
+    font-size: 30px
 }
 .nav-link-cont {
   position: relative;
@@ -36,11 +36,14 @@
   transform: scaleX(1);
 }
 
-.Navigation {
+.navbar {
   -webkit-box-shadow: 1px 3px 20px #e7e7e7;
   -moz-box-shadow:    1px 3px 20px #e7e7e7;
   box-shadow:         1px 3px 20px #e7e7e7;
-  z-index:999;
   background-image: url(./interlaced.png);
-  background-color: #c5c5c57a;
+  
+}
+
+.Navigation{
+  
 }

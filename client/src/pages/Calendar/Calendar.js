@@ -1,6 +1,7 @@
 import React from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
+import "../Calendar/Calendar.css"
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
@@ -13,7 +14,7 @@ const styles = {
 };
 
 const Calendar = props => (
-  <div style={styles.Calendar}>
+  <div style={styles.Calendar} id="calendarDiv">
     <BigCalendar
       localizer={localizer}
       events={[]}
@@ -21,6 +22,8 @@ const Calendar = props => (
       endAccessor="end"
     />
   </div>
+  
+
 );
 
 export default Calendar;

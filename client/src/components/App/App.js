@@ -56,6 +56,19 @@ class App extends Component {
       <AuthContext.Provider value={this.state.auth}>
         <div className='App'>
           <Navigation />
+          <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
           <div className='container'>
             <Switch>
               <Route path='/register' component={Register} />
@@ -69,6 +82,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
+        </div>
         </div>
       </AuthContext.Provider>
     );
