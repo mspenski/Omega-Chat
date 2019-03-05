@@ -4,6 +4,7 @@ import moment from "moment";
 import "../Calendar/Calendar.css"
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
+// import { calendarFormat } from "moment";
 
 const localizer = BigCalendar.momentLocalizer(moment);
 
@@ -22,9 +23,10 @@ const Calendar = props => (
       endAccessor="end"
     />
   </div>
-  
+
 
 );
 
 export default Calendar;
 
+// create events in db and then see if get request populates calendar, once that is working move on to creating form to add events and post locally and test if they can post 

@@ -56,5 +56,15 @@ export default {
     sendReply: function (fullName, text, id) {
       return axios.post(`/${id}/replies`, { fullName, text })
     }
+  },
+
+  Events: {
+    getEvents: function (authToken) {
+      return axios.get('/api/events', {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      })
+    }
   }
 }
