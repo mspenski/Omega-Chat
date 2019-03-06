@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import API from '../../lib/API.js'
-import './MessageBoard.css'
+import API from '../../lib/API.js';
+import moment from 'moment';
+import './MessageBoard.css';
 
 import AuthContext from '../../contexts/AuthContext'
 
@@ -28,8 +29,12 @@ class MessageBoard extends Component {
 
   getPosts = () => {
     API.Posts.getPosts(this.context.authToken)
-      .then(res => this.setState({ posts: res.data }))
+      .then(res => this.setState({ posts: res.data })
+        , console.log({ this.state.posts })
+      )
   }
+  // .then(console.log({posts: res.data}))
+
 
   handleSubmit = event => {
     event.preventDefault();
@@ -99,7 +104,15 @@ class MessageBoard extends Component {
                       <div className="form-group">
                         {this.state.posts.map(newPost => (
                           <p key={newPost.id}>
-                            <h4 key={newPost.id} id='new-post-title'>{newPost.title} Posted: {newPost.date}</h4>
+                            <h4 key={newPost.id} id='new-post-title'>{newPost.title}
+                              Posted: {newPost.date}
+                              {/* function () {
+                                  let str = newPost.date;
+                                  let momentDate = moment(str).format("dddd, MMMM Do YYYY, h:mm:ss a");
+                                  console.log(momentDate) */}
+
+
+                            </h4>
                             {newPost.text}<br />
                             {/* <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
                             <input
