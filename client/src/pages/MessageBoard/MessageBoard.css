@@ -106,4 +106,32 @@ button{
     transform: scaleX(1);
   }
 
-  
+  .timeStamp {
+    font-size: 15px;
+    color: #777777;
+    text-align: right;
+  }
+
+  .forum {
+    text-align: left;
+  }
+
+  .post-title, .logo{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px
+  }
+
+  .posts {
+    margin-bottom: 60px;
+  }
+
+  .card {
+    background-color: #c2c2c28e;
+    border-radius: 6px;
+  }
+
+  .post-form {
+    background-color: #e4e2e2c5;
+    padding: 10px;
+    border-radius: 6px;
+  }
