@@ -40,7 +40,7 @@ class Roster extends Component {
                   <th scope="col" id="roster-email">Email</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="rosCard">
                 {/* db results go here */}
                 {this.state.users.map(user => (
                   <tr key={user.email}>
