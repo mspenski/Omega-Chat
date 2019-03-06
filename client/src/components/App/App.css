@@ -22,9 +22,9 @@
 
 .area {
   width: 100%;
-  height:100vh;
-  position: sticky
- 
+  height:100%;
+  position: sticky;
+  min-height: 100vh;
 }
 
 .circles{
@@ -44,7 +44,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
   animation: animate 25s linear infinite;
   bottom: -150px;
   
