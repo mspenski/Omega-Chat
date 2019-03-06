@@ -30,7 +30,7 @@ class MessageBoard extends Component {
   getPosts = () => {
     API.Posts.getPosts(this.context.authToken)
       .then(res => this.setState({ posts: res.data })
-        , console.log({ this.state.posts })
+        // , console.log({ this.state.posts })
       )
   }
   // .then(console.log({posts: res.data}))
@@ -105,13 +105,7 @@ class MessageBoard extends Component {
                         {this.state.posts.map(newPost => (
                           <p key={newPost.id}>
                             <h4 key={newPost.id} id='new-post-title'>{newPost.title}
-                              Posted: {newPost.date}
-                              {/* function () {
-                                  let str = newPost.date;
-                                  let momentDate = moment(str).format("dddd, MMMM Do YYYY, h:mm:ss a");
-                                  console.log(momentDate) */}
-
-
+                              Posted: {moment(newPost.date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
                             </h4>
                             {newPost.text}<br />
                             {/* <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>

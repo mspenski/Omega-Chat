@@ -1,27 +1,24 @@
 import React, { Component } from "react";
-// import BigCalendar from "react-big-calendar";
-// import moment from "moment";
+import BigCalendar from "react-big-calendar";
+import moment from "moment";
 import "../Calendar/Calendar.css"
 import API from '../../lib/API'
-// import "react-big-calendar/lib/css/react-big-calendar.css";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import AuthContext from '../../contexts/AuthContext'
 // import { calendarFormat } from "moment";
 
-// const localizer = BigCalendar.momentLocalizer(moment);
+const localizer = BigCalendar.momentLocalizer(moment);
 
-// const styles = {
-//   Calendar: {
-//     height: "100vh"
-//   }
-// };
+const styles = {
+  Calendar: {
+    height: "100vh"
+  }
+};
 class Calendar extends Component {
   static contextType = AuthContext;
 
   state = {
-    title: '',
-    post: '',
-    posts: [],
-    reply: ''
+    events: []
   }
   componentDidMount = () => {
     this.getEvents();
@@ -29,21 +26,22 @@ class Calendar extends Component {
 
   getEvents = () => {
     API.Events.getEvents(this.context.authToken)
-      .then(res => this.setState({ posts: res.data }))
+      .then(res => this.setState({ events: res.data }))
   }
 
+  render() {
+    return (
+      <div style={styles.Calendar} id="calendarDiv">
+        <BigCalendar
+          localizer={localizer}
+          events={this.state.events}
+          startAccessor="start"
+          endAccessor="end"
+        />
+      </div>
 
-  // const Calendar = props => (
-  //   <div style={styles.Calendar} id="calendarDiv">
-  //     <BigCalendar
-  //       localizer={localizer}
-  //       events={[]}
-  //       startAccessor="start"
-  //       endAccessor="end"
-  //     />
-  //   </div>
-
-
+    )
+  }
 }
 
 
