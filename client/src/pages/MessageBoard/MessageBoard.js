@@ -60,7 +60,7 @@ class MessageBoard extends Component {
 
                       <input
                         type="text"
-                        id="post-title"
+                        id="post-title-input"
                         name="title"
                         value={title}
                         onChange={this.handleInputChange}
@@ -72,7 +72,7 @@ class MessageBoard extends Component {
                     <div className="form-group">
                       <textarea
                         className="form-control"
-                        id="exampleFormControlTextarea1 post-text"
+                        id="exampleFormControlTextarea1 post-text-input"
                         rows="3"
                         placeholder="Post"
                         name="post"
@@ -97,9 +97,9 @@ class MessageBoard extends Component {
                       <div className="form-group">
                         {this.state.posts.map(newPost => (
                           <p key={newPost.id}>
-                            <h4>{newPost.title}</h4>
+                            <h4 key={newPost.id} id='new-post-title'>{newPost.title} Posted: {newPost.date}</h4>
                             {newPost.text}<br />
-                            <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
+                            {/* <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
                             <input
                               type="text"
                               id="post-reply"
@@ -107,7 +107,7 @@ class MessageBoard extends Component {
                               value={reply}
                               onChange={this.handleInputChange}
                               className="form-control"
-                              placeholder="Type response here"></input>
+                              placeholder="Type response here"></input> */}
                             {/* <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
                             <button type="button" id="like-button" className="btn btn-success like mb-2"><i className="far fa-thumbs-up"></i> Like</button>
                             <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button> */}

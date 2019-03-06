@@ -17,7 +17,7 @@ postsController.post('/', (req, res) => {
 postsController.get('/',
   JWTVerifier,
   (req, res) => {
-    db.Posts.find({})
+    db.Posts.find().sort({ date: -1 })
       .then(results => {
         res.json(results);
       })
