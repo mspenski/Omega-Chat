@@ -2,7 +2,7 @@ import React from "react";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
 import "../Calendar/Calendar.css"
-
+import API from '../../lib/API'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 // import { calendarFormat } from "moment";
 
