@@ -55,37 +55,37 @@ class App extends Component {
   render() {
     return (
       <AuthContext.Provider value={this.state.auth}>
-        <div class="area" >
-            <ul class="circles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>
-        <div className='App'>
-          <Navigation />
-          
-          <div className='container'>
-            <Switch>
-              <Route path='/register' component={Register} />
-              <PrivateRoute path='/secret' component={Secret} />
-              <Route exact path='/' component={Home} />
-              <PrivateRoute exact path='/home' component={Home} />
-              <Route exact path='/login' component={Login} />
-              <PrivateRoute exact path='/calendar' component={Calendar} />
-              <PrivateRoute exact path='/roster' component={Roster} />
-              <PrivateRoute exact path='/messageboard' component={MessageBoard} />
-              <Route component={NotFound} />
-            </Switch>
+        <div className="area" >
+          <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <div className='App'>
+            <Navigation />
+
+            <div className='container'>
+              <Switch>
+                <Route path='/register' component={Register} />
+                <PrivateRoute path='/secret' component={Secret} />
+                <Route exact path='/' component={Home} />
+                <PrivateRoute exact path='/home' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <PrivateRoute exact path='/calendar' component={Calendar} />
+                <PrivateRoute exact path='/roster' component={Roster} />
+                <PrivateRoute exact path='/messageboard' component={MessageBoard} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
           </div>
-        </div> 
-        <Footer />
+          <Footer />
         </div>
       </AuthContext.Provider>
     );
