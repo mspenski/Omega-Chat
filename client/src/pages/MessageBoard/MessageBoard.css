@@ -5,14 +5,16 @@ button{
 
   .norm-cont {
     position: relative;
-    font-size: 24px;
+    font-size: 26px;
   }
   .norm {
     display: inline-block;
     position: relative;
     text-decoration: none;
     padding: 10px 0;
-    color: #777777;
+    color: #f0f0f0;
+    width: 25vw;
+
   }
   .norm-wrapper {
     position: relative;
