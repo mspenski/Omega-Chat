@@ -43,7 +43,9 @@ class MessageBoard extends Component {
   }
 
   render() {
-    const { title, post, reply } = this.state
+    const { title, post,
+      // reply
+    } = this.state
     return (
       <>
         <div className="message">
