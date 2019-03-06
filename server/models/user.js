@@ -27,12 +27,6 @@ const UserSchema = new Schema({
     type: String,
     trim: true,
     required: 'Phone # is required in format XXX-XXX-XXXX',
-    // validate: [
-    //   function (input) {
-    //     return input.length === 12;
-    //   },
-    //   'Format must be 111-222-3333'
-    // ]
   },
   position: {
     type: String,
