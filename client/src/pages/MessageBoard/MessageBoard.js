@@ -88,7 +88,7 @@ class MessageBoard extends Component {
                       />
 
                     </div>
-                    <button onClick={this.handleSubmit} id="post-button" className="btn btn-primary add-post">Post</button>
+                    <button onClick={this.handleSubmit} id="post-button" className="btn add-post norm">Post</button>
                   </div>
                 </form>
 
