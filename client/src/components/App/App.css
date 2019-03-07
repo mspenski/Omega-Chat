@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  
+  min-height: 73vh;
+  bottom: 0;
 }
 
 .App-logo {
@@ -25,6 +26,7 @@
   height:100%;
   position: sticky;
   min-height: 100vh;
+  bottom: 0;
 }
 
 .circles{
@@ -45,7 +47,7 @@
   width: 20px;
   height: 20px;
   background: rgba(255, 255, 255, 0.4);
-  animation: animate 25s linear infinite;
+  animation: animate 15s linear infinite;
   bottom: -150px;
   
 }
