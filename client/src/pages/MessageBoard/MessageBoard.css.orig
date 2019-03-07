@@ -1,0 +1,139 @@
+
+button{
+    margin: 8px;
+  }
+
+  .norm-cont {
+    position: relative;
+    font-size: 26px;
+  }
+  .norm {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #f0f0f0;
+    width: 15vw;
+
+  }
+  .norm-wrapper {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+  }
+  
+  
+  .norm:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #225681;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s;
+  }
+  .norm:hover:after {
+    transform: scaleX(1);
+  }
+  
+
+  .like-cont {
+    position: relative;
+    font-size: 24px;
+  }
+  .like {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    color: black;
+  }
+  .like-wrapper {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+  }
+  
+  
+  .like:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s;
+  }
+  .like:hover:after {
+    transform: scaleX(1);
+  }
+
+  .dislike-cont {
+    position: relative;
+    font-size: 24px;
+  }
+  .dislike {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #777777;
+  }
+  .dislike-wrapper {
+    position: relative;
+    display: block;
+    padding: 20px 0;
+  }
+  
+  
+  .dislike:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #d8291d;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s;
+  }
+  .dislike:hover:after {
+    transform: scaleX(1);
+  }
+
+  .timeStamp {
+    font-size: 15px;
+    color: #777777;
+    text-align: right;
+  }
+
+  .forum {
+    text-align: left;
+  }
+
+  .post-title, .logo{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 25px
+  }
+
+  .posts {
+    margin-bottom: 60px;
+  }
+
+  .card {
+    background-color: #c2c2c28e;
+    border-radius: 6px;
+  }
+
+  .post-form {
+    background-color: #e4e2e2c5;
+    padding: 10px;
+    border-radius: 6px;
+  }
