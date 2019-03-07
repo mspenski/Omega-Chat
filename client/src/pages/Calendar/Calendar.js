@@ -153,21 +153,7 @@ class Calendar extends Component {
               value={end}
               onChange={this.handleInputChange}
             />
-            <br></br>
-            <div className='navbar-brand logo' to='#'>  End Time</div>
-            <input
-              type="text"
-              className="eventEnd"
-              name="end"
-              placeholder="00:00"
-              value={end}
-              onChange={this.handleInputChange}
-            />
-           <br></br>
-           {/* <button onClick={this.handleSubmit}>Add Event</button>
-            <button className='nav-link' to='/roster' onClick={this.toggleCollapse}>Create Event</button> */}
             <div className="like" onClick={this.handleSubmit}>Add Event</div>
-              
           </form>
         </div>
 
