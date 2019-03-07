@@ -65,6 +65,11 @@ export default {
           'Authorization': `Bearer ${authToken}`
         }
       })
+    },
+    sendEvents: function (title, description, start, end) {
+      return axios.post('/api/events', { title, description, start, end })
+
+
     }
   }
 }

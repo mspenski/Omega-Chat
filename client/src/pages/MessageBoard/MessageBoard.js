@@ -116,16 +116,17 @@ class MessageBoard extends Component {
                             <br />
                             {/* <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
                             <input
-                              type="text"
+                            type="text"
                               id="post-reply"
                               name="Reply"
                               value={reply}
                               onChange={this.handleInputChange}
                               className="form-control"
-                              placeholder="Type response here"></input> */}
+                            placeholder="Type response here"></input> */}
                             {/* <button type="button" id="show-button" className="btn btn-primary show mb-2">Show Thread</button>
                             <button type="button" id="like-button" className="btn btn-success like mb-2"><i className="far fa-thumbs-up"></i> Like</button>
-                            <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button> */}
+                          <button type="button" id="dislike-button" className="btn btn-danger dislike mb-2"><i className="far fa-thumbs-down"></i> Dislike</button> */}
+                            {console.log(newPost)}
                           </p>
                         ))}
                       </div>
