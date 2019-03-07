@@ -4,7 +4,8 @@ import moment from "moment";
 import "../Calendar/Calendar.css"
 import API from '../../lib/API'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import AuthContext from '../../contexts/AuthContext'
+import AuthContext from '../../contexts/AuthContext';
+import axios from 'axios';
 // import { calendarFormat } from "moment";
 
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -55,8 +56,16 @@ class Calendar extends Component {
     end: '',
     // isHidden: true
   }
-  componentDidMount = () => {
-    this.getEvents();
+  componentDidMount() {
+    axios.get('/api/events')
+      .then(response => response.data)
+      .then(events => events.map(event => {
+        event.start = moment(event.start).toDate()
+        event.end = moment(event.end).toDate()
+        return event;
+      }))
+      .then(events => this.setState({ events }))
+      .catch(err => this.setState({ error: err.message }))
   }
 
   getEvents = () => {
@@ -116,7 +125,7 @@ class Calendar extends Component {
               type="text"
               className="eventStart"
               name="start"
-              placeholder="Start"
+              placeholder="Start Date (YYYY-MM-DD)"
               value={start}
               onChange={this.handleInputChange}
             />
@@ -124,7 +133,7 @@ class Calendar extends Component {
               type="text"
               className="eventEnd"
               name="end"
-              placeholder="End"
+              placeholder="End Date (YYYY-MM-DD)"
               value={end}
               onChange={this.handleInputChange}
             />
