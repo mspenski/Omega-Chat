@@ -48,11 +48,13 @@ class HomePage extends Component {
                     <i className="fab fa-github"></i></a>
                   <a className="daLink" href="https://www.linkedin.com/in/brandon-wiggins-3423a686/">
                     <i className="fab fa-linkedin"></i></a>
+
                 </div>
               </div>
 
             </div>
           </div>
+
         </div>
 
       </>
