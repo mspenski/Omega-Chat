@@ -85,14 +85,8 @@ class App extends Component {
               </Switch>
             </div>
           </div>
-<<<<<<< HEAD
-        </div> 
-       <Footer />
-        </div> 
-=======
           <Footer />
         </div>
->>>>>>> 3e46168c26da6f313ab3108c1ae3c30f325d65d6
       </AuthContext.Provider>
     );
   }
