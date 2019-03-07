@@ -6,10 +6,9 @@ const jwt = require('jsonwebtoken');
 
 postsController.post('/', (req, res) => {
   console.log('posting')
-  console.log(req.body)
+  console.log(req.body.title)
   const { title, post } = req.body;
-
-  db.Posts.create({ title, text: post })
+  db.Posts.create(req.body.title)
     .then(data => res.json(data))
     .catch(err => res.json(err));
 });
