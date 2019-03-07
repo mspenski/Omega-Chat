@@ -4,7 +4,8 @@ import moment from "moment";
 import "../Calendar/Calendar.css"
 import API from '../../lib/API'
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import AuthContext from '../../contexts/AuthContext'
+import AuthContext from '../../contexts/AuthContext';
+import axios from 'axios';
 // import { calendarFormat } from "moment";
 
 const localizer = BigCalendar.momentLocalizer(moment);
@@ -14,31 +15,146 @@ const styles = {
     height: "100vh"
   }
 };
+
+// class Create extends Component {
+//   static contextType = AuthContext;
+
+// //   state = {
+//         isHidden: true
+// //   }
+
+
+
+//   toggleHidden() {
+//     this.setState({
+//       isHidden: !this.state.isHidden
+//     })
+//   }
+
+
+
+//   render() {
+//     return (
+//       <>
+//         <div {...this.setState({ isHidden: true })}>
+//           <button onClick={this.toggleHidden()}>Create Event</button>
+//         </div>
+
+//       </>
+
+//     )
+//   };
+
 class Calendar extends Component {
   static contextType = AuthContext;
 
   state = {
-    events: []
+    events: [],
+    title: '',
+    description: '',
+    start: '',
+    end: '',
+    // isHidden: true
   }
-  componentDidMount = () => {
-    this.getEvents();
+  componentDidMount() {
+    axios.get('/api/events')
+      .then(response => response.data)
+      .then(events => events.map(event => {
+        event.start = moment(event.start).toDate()
+        event.end = moment(event.end).toDate()
+        return event;
+      }))
+      .then(events => this.setState({ events }))
+      .catch(err => this.setState({ error: err.message }))
   }
 
   getEvents = () => {
     API.Events.getEvents(this.context.authToken)
       .then(res => this.setState({ events: res.data }))
   }
+  // sendEvents = () => {
+  //   API.Events.sendEvents(this.context.authToken)
+  //     .then(res => this.setState({ events: res.data }))
+  // }
+
+  handleInputChange = event => {
+    let { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+    API.Events.sendEvents(this.state.title, this.state.description, this.state.start, this.state.end)
+      .then(res => console.log(res));
+  }
+  // function to show/hide create form
+  // toggleHidden()
+
+
+
+
 
   render() {
+    const { title, description, start, end } = this.state
     return (
-      <div style={styles.Calendar} id="calendarDiv">
-        <BigCalendar
-          localizer={localizer}
-          events={this.state.events}
-          startAccessor="start"
-          endAccessor="end"
-        />
-      </div>
+      <>
+
+        <div className="createEventForm">
+          <form>
+
+            <input
+              type="text"
+              className="eventTitle"
+              name="title"
+              placeholder="Title"
+              value={title}
+              onChange={this.handleInputChange}
+            />
+            <input
+              type="text"
+              className="eventDescription"
+              name="description"
+              placeholder="Description"
+              value={description}
+              onChange={this.handleInputChange}
+            />
+            <input
+              type="text"
+              className="eventStart"
+              name="start"
+              placeholder="Start Date (YYYY-MM-DD)"
+              value={start}
+              onChange={this.handleInputChange}
+            />
+            <input
+              type="text"
+              className="eventEnd"
+              name="end"
+              placeholder="End Date (YYYY-MM-DD)"
+              value={end}
+              onChange={this.handleInputChange}
+            />
+            <button onClick={this.handleSubmit}>Add Event</button>
+          </form>
+        </div>
+
+        <button>Create Event</button>
+
+
+        <div style={styles.Calendar} id="calendarDiv" >
+          <BigCalendar
+            localizer={localizer}
+            events={this.state.events}
+            startAccessor="start"
+            endAccessor="end"
+          />
+        </div>
+
+      </>
+
 
     )
   }
