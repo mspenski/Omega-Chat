@@ -14,37 +14,41 @@ class MessageBoard extends Component {
     posts: [],
     reply: ''
   }
+  componentDidMount = () => {
+    this.getPosts();
+  };
+  getPosts = () => {
+    API.Posts.getPosts(this.context.authToken)
+      .then(res => this.setState({ posts: res.data, title: "", post: "" })
+      )
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     let { name, value } = event.target;
-
     this.setState({
       [name]: value
-    })
-  }
+    });
+  };
 
-  componentDidMount = () => {
-    this.getPosts();
-  }
 
-  getPosts = () => {
-    API.Posts.getPosts(this.context.authToken)
-      .then(res => this.setState({ posts: res.data })
-        // , console.log({ this.state.posts })
-      )
-  }
-  // .then(console.log({posts: res.data}))
 
 
   handleSubmit = event => {
     event.preventDefault();
-    API.Posts.sendPosts(this.state.title, this.state.post)
-      .then(res => console.log(res));
+    if (this.state.title && this.state.post) {
+      API.Posts.sendPosts({
+        title: this.state.title,
+        post: this.state.post
+      })
+        .then(res => this.getPosts())
+        .catch(err => console.log(err));
+    }
   }
 
   handleReply = (event, id) => {
     event.preventDefault();
-    API.Replies.sendReply(this.state.text, id)
+    API.Replies.sendReply(this.state.post, id)
   }
 
   render() {
@@ -103,12 +107,12 @@ class MessageBoard extends Component {
                     <div className="card-body">
                       <div className="form-group post-form">
                         {this.state.posts.map(newPost => (
-                          <p key={newPost.id}>
+                          <p key={newPost._id}>
 
                             <h4
-                              className="post-title" key={newPost.id} id='new-post-title'>{newPost.title}
+                              className="post-title" key={newPost._id} id='new-post-title'>{newPost.title}
                             </h4>
-                            <p className="forum"> {newPost.text}</p>
+                            <p className="forum"> {newPost.post}</p>
                             <h5
                               className="timeStamp">Posted: {moment(newPost.date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
                             </h5>
