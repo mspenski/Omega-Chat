@@ -101,13 +101,19 @@ class MessageBoard extends Component {
                 <div className="posts">
                   <form className="card beer-form">
                     <div className="card-body">
-                      <div className="form-group">
+                      <div className="form-group post-form">
                         {this.state.posts.map(newPost => (
                           <p key={newPost.id}>
-                            <h4 key={newPost.id} id='new-post-title'>{newPost.title}
-                              Posted: {moment(newPost.date).format("dddd, MMMM Do YYYY, hh:mm:ss a")}
+
+                            <h4
+                              className="post-title" key={newPost.id} id='new-post-title'>{newPost.title}
                             </h4>
-                            {newPost.text}<br />
+                            <p className="forum"> {newPost.text}</p>
+                            <h5
+                              className="timeStamp">Posted: {moment(newPost.date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+                            </h5>
+                            <hr></hr>
+                            <br />
                             {/* <button onClick={() => this.handleReply(newPost.id)} id="reply-button" className="btn btn-primary reply mb-2">Reply</button>
                             <input
                             type="text"

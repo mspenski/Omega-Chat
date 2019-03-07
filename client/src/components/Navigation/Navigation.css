@@ -36,13 +36,13 @@
   transform: scaleX(1);
 }
 
-.navbar {
+/* .navbar {
   -webkit-box-shadow: 1px 3px 20px #e7e7e7;
   -moz-box-shadow:    1px 3px 20px #e7e7e7;
   box-shadow:         1px 3px 20px #e7e7e7;
   background-image: url(./interlaced.png);
   
-}
+} */
 
 .Navigation{
   
