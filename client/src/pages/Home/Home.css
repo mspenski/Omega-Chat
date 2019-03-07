@@ -4,87 +4,41 @@ h2 {
     padding: 0;
     font-weight: 300;
   }
-  /* Carousel */
-  #carousel-example {
-    font-family: 'Lato', sans-serif;
+  .homeCont {
+    /* background-color: rgba(233, 233, 233, 0.315); */
+    width: 65%;
+    border-radius: 8px;
   }
-  #carousel-example .carousel-wrapper {
-    background: #111;
-    color: white;
-    font-weight: 300;
-    padding: 40px 0;
-    text-transform: uppercase;
+
+  .mainTitle {
+    font-size: 5rem;
+    font-family: 'Josefin Sans', sans-serif;
   }
-  #carousel-example .carousel-wrapper h2 {
-    padding: 0 0 35px;
-    text-align: center;
+
+  .team {
+    font-family: 'Josefin Sans', sans-serif;
   }
-  #carousel-example .carousel-wrapper ol {
-    margin: 0 auto;
-    position: static;
-    width: 100%;
+
+  .about {
+    font-size: 26px;
   }
-  #carousel-example .carousel-wrapper ol span {
-    border: 1px solid transparent;
-    cursor: pointer;
-    height: auto;
-    padding: 10px 15px;
-    text-align: center;
-    transition: border 0.3s, color 0.3s;
-    width: auto;
+
+  .usPic{
+    width: 80%;
+    height: 70%;
+    border-radius: 6px;
   }
-  #carousel-example .carousel-wrapper ol .active {
-    background: none;
-    border: 1px solid skyblue;
-    color: white;
-    height: auto;
-    padding: 10px 15px;
-    width: auto;
+
+  .ourLinks {
+    font-size: 29px;
+    letter-spacing: 10px;
   }
-  #carousel-example .carousel-inner .item {
-    transition: opacity 1s;
+
+  .daLink {
+    text-decoration: none;
+    color: rgb(218, 218, 218)
   }
-  #carousel-example .carousel-inner .item .img-wrapper {
-    height: 400px;
-    margin: 0 -15px 0 0;
-    overflow: hidden;
-    position: relative;
+
+  .daLink:hover {
+    color: rgb(145, 143, 143)
   }
-  #carousel-example .carousel-inner .item .img-wrapper img {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 1000px;
-  }
-  #carousel-example .carousel-inner .item .carousel-caption {
-    background: white;
-    color: #111;
-    font-size: 1.1em;
-    height: 400px;
-    margin: 0 0 0 -15px;
-    padding: 30px;
-    position: static;
-    text-align: left;
-    text-shadow: none;
-  }
-  #carousel-example .carousel-inner .item .carousel-caption h2 {
-    padding: 0 0 20px;
-    text-transform: uppercase;
-  }
-  @media (max-width: 767px) {
-    #carousel-example .carousel-inner .item .img-wrapper {
-      height: auto;
-    }
-    #carousel-example .carousel-inner .item .img-wrapper img {
-      -webkit-transform: none;
-              transform: none;
-      position: static;
-      width: 100%;
-    }
-    #carousel-example .carousel-inner .item .carousel-caption {
-      height: auto;
-    }
-  }
-  
