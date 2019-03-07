@@ -16,35 +16,6 @@ const styles = {
   }
 };
 
-// class Create extends Component {
-//   static contextType = AuthContext;
-
-// //   state = {
-//         isHidden: true
-// //   }
-
-
-
-//   toggleHidden() {
-//     this.setState({
-//       isHidden: !this.state.isHidden
-//     })
-//   }
-
-
-
-//   render() {
-//     return (
-//       <>
-//         <div {...this.setState({ isHidden: true })}>
-//           <button onClick={this.toggleHidden()}>Create Event</button>
-//         </div>
-
-//       </>
-
-//     )
-//   };
-
 class Calendar extends Component {
   static contextType = AuthContext;
 
