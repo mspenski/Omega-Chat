@@ -4,7 +4,7 @@ import moment from 'moment';
 import './MessageBoard.css';
 
 import AuthContext from '../../contexts/AuthContext'
-
+// change to commit
 class MessageBoard extends Component {
   static contextType = AuthContext;
 
