@@ -104,7 +104,8 @@ class Calendar extends Component {
 
         <div className="createEventForm">
           <form>
-
+          <div className='navbar-brand logo' to='#'>Create Event</div>
+          
             <input
               type="text"
               className="eventTitle"
@@ -121,28 +122,57 @@ class Calendar extends Component {
               value={description}
               onChange={this.handleInputChange}
             />
+            <br></br>
+
+            <div className='navbar-brand logo' to='#'>   Start Date</div>
             <input
               type="text"
               className="eventStart"
               name="start"
-              placeholder="Start Date (YYYY-MM-DD)"
+              placeholder="(YYYY-MM-DD)"
               value={start}
               onChange={this.handleInputChange}
             />
+            <br></br>
+             <div className='navbar-brand logo' to='#'>Start Time</div>
+            <input
+              type="text"
+              className="eventStart"
+              name="start"
+              placeholder="00:00"
+              value={start}
+              onChange={this.handleInputChange}
+            />
+            <br></br>
+            <div className='navbar-brand logo' to='#'>    End Date</div>
             <input
               type="text"
               className="eventEnd"
               name="end"
-              placeholder="End Date (YYYY-MM-DD)"
+              placeholder="(YYYY-MM-DD)"
               value={end}
               onChange={this.handleInputChange}
             />
-            <button onClick={this.handleSubmit}>Add Event</button>
+            <br></br>
+            <div className='navbar-brand logo' to='#'>  End Time</div>
+            <input
+              type="text"
+              className="eventEnd"
+              name="end"
+              placeholder="00:00"
+              value={end}
+              onChange={this.handleInputChange}
+            />
+           <br></br>
+           {/* <button onClick={this.handleSubmit}>Add Event</button>
+            <button className='nav-link' to='/roster' onClick={this.toggleCollapse}>Create Event</button> */}
+            <div className="like" onClick={this.handleSubmit}>Add Event</div>
+              
           </form>
         </div>
 
-        <button>Create Event</button>
-
+      
+        <br></br>
 
         <div style={styles.Calendar} id="calendarDiv" >
           <BigCalendar
