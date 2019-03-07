@@ -98,95 +98,97 @@ class Calendar extends Component {
   toggleHidden = event => {
     event.preventDefault();
     var element = document.getElementById("eventForm");
-    element.classList.remove("invisible")
+
+    element.classList.contains('invisible') ?
+      element.classList.remove("invisible") : element.classList.add('invisible')
   }
-  
+
 
 
   render() {
     const { title, description, start, end } = this.state
     return (
       <>
-<div className="like" onClick={this.toggleHidden}>Create Event</div>
-<br></br>
+        <div className="like" onClick={this.toggleHidden}>Create Event</div>
+        <br></br>
 
-<div className="createEventForm invisible" id = "eventForm">
-<form>
-<div class="row">
-  <div class="col-sm-4"><div className='navbar-brand logo' to='#'>Create Event</div>
-          
-            <input
-              type="text"
-              className="eventTitle"
-              name="title"
-              placeholder="Title"
-              value={title}
-              onChange={this.handleInputChange}
-            />
-            <div className='navbar-brand logo' to='#'>Description    </div>
-            <input
-              type="text"
-              className="eventDescription"
-              name="description"
-              placeholder="Description"
-              value={description}
-              onChange={this.handleInputChange}
-            /></div>
-  
+        <div className="createEventForm invisible" id="eventForm">
+          <form>
+            <div class="row">
+              <div class="col-sm-4"><div className='navbar-brand logo' to='#'>Create Event</div>
 
-  <div class="col-sm-4"><div className='navbar-brand logo' to='#'> Start Date</div>
+                <input
+                  type="text"
+                  className="eventTitle"
+                  name="title"
+                  placeholder="Title"
+                  value={title}
+                  onChange={this.handleInputChange}
+                />
+                <div className='navbar-brand logo' to='#'>Description    </div>
+                <input
+                  type="text"
+                  className="eventDescription"
+                  name="description"
+                  placeholder="Description"
+                  value={description}
+                  onChange={this.handleInputChange}
+                /></div>
 
-            <input
-              type="text"
-              className="eventStart"
-              name="start"
-              placeholder="(YYYY-MM-DD)"
-              value={start}
-              onChange={this.handleInputChange}
-            /> 
-             <div className='navbar-brand logo' to='#'>Start Time</div>
-            <input
-              type="text"
-              className="eventStart"
-              name="start"
-              placeholder="00:00"
-              value={start}
-              onChange={this.handleInputChange}
-            />
+
+              <div class="col-sm-4"><div className='navbar-brand logo' to='#'> Start Date</div>
+
+                <input
+                  type="text"
+                  className="eventStart"
+                  name="start"
+                  placeholder="(YYYY-MM-DD)"
+                  value={start}
+                  onChange={this.handleInputChange}
+                />
+                <div className='navbar-brand logo' to='#'>Start Time</div>
+                <input
+                  type="text"
+                  className="eventStart"
+                  name="start"
+                  placeholder="00:00"
+                  value={start}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div class="col-sm-4">
+                <div className='navbar-brand logo' to='#'> End Date</div>
+                <input
+                  type="text"
+                  className="eventEnd"
+                  name="end"
+                  placeholder="(YYYY-MM-DD)"
+                  value={end}
+                  onChange={this.handleInputChange}
+                />
+
+                <div className='navbar-brand logo' to='#'>End Time</div>
+                <input
+                  type="text"
+                  className="eventStart"
+                  name="start"
+                  placeholder="00:00"
+                  value={start}
+                  onChange={this.handleInputChange}
+                />
+                <br></br>
+
+
+              </div>
             </div>
-  
-  <div class="col-sm-4"> 
-            <div className='navbar-brand logo' to='#'> End Date</div>
-            <input
-              type="text"
-              className="eventEnd"
-              name="end"
-              placeholder="(YYYY-MM-DD)"
-              value={end}
-              onChange={this.handleInputChange}
-            />
-            
-            <div className='navbar-brand logo' to='#'>End Time</div>
-            <input
-              type="text"
-              className="eventStart"
-              name="start"
-              placeholder="00:00"
-              value={start}
-              onChange={this.handleInputChange}
-            />
-            <br></br>
-            
-          
-        </div>
-        </div>
-        <div className="like" onClick={this.handleSubmit}>Add Event</div>
-        </form>
-  
-</div>
-        
+            <div className="like" onClick={this.handleSubmit}>Add Event</div>
+          </form>
 
-      
+        </div>
+
+
+
         <br></br>
 
         <div style={styles.Calendar} id="calendarDiv" >
@@ -197,7 +199,7 @@ class Calendar extends Component {
             endAccessor="end"
           />
         </div>
-        
+
 
       </>
 
