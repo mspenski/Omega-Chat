@@ -137,7 +137,7 @@ class Calendar extends Component {
               value={end}
               onChange={this.handleInputChange}
             />
-            <button onClick={this.handleSubmit}>Add Event</button>
+            <div className="like" onClick={this.handleSubmit}>Add Event</div>
           </form>
         </div>
 

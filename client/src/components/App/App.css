@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  
+  min-height: 73vh;
+  bottom: 0;
 }
 
 .App-logo {
@@ -25,6 +26,7 @@
   height:100%;
   position: sticky;
   min-height: 100vh;
+  bottom: 0;
 }
 
 .circles{
@@ -44,10 +46,12 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.4);
-  animation: animate 25s linear infinite;
+  /* background: rgba(255, 255, 255, 0.4); */
+  animation: animate 15s linear infinite;
   bottom: -150px;
-  
+  background-image: url(./omega.png);
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .circles li:nth-child(1){
@@ -139,7 +143,7 @@
   100%{
       transform: translateY(-1000px) rotate(720deg);
       opacity: 0;
-      border-radius: 50%;
+      border-radius: 0%;
   }
 
 }
