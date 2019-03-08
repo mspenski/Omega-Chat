@@ -31,8 +31,9 @@ class Calendar extends Component {
     axios.get('/api/events')
       .then(response => response.data)
       .then(events => events.map(event => {
-        event.start = moment(event.start).toDate()
-        event.end = moment(event.end).toDate()
+        event.start = moment().local(event.start).toDate()
+        console.log(event.start)
+        event.end = moment().local(event.end).toDate()
         return event;
       }))
       .then(events => this.setState({ events }))
