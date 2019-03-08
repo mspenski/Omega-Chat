@@ -6,7 +6,6 @@ import API from '../../lib/API'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import AuthContext from '../../contexts/AuthContext';
 import axios from 'axios';
-// import { calendarFormat } from "moment";
 
 const localizer = BigCalendar.momentLocalizer(moment);
 
@@ -25,7 +24,8 @@ class Calendar extends Component {
     description: '',
     start: '',
     end: '',
-  }
+  };
+
   componentDidMount() {
     axios.get('/api/events')
       .then(response => response.data)
@@ -37,16 +37,13 @@ class Calendar extends Component {
       }))
       .then(events => this.setState({ events }))
       .catch(err => this.setState({ error: err.message }))
-  }
+  };
 
   getEvents = () => {
     API.Events.getEvents(this.context.authToken)
-      .then(res => this.setState({ events: res.data }))
+      .then(res => this.setState({ events: res.data, title: "", start: "", description: "", end: "" }))
   }
-  // sendEvents = () => {
-  //   API.Events.sendEvents(this.context.authToken)
-  //     .then(res => this.setState({ events: res.data }))
-  // }
+
 
   handleInputChange = event => {
     let { name, value } = event.target;
@@ -59,7 +56,9 @@ class Calendar extends Component {
   handleSubmit = event => {
     event.preventDefault();
     API.Events.sendEvents(this.state.title, this.state.description, this.state.start, this.state.end)
-      .then(res => console.log(res));
+      .then(res => this.getEvents());
+    let element = document.getElementById("eventForm");
+    element.classList.add('invisible');
   }
 
 
@@ -96,24 +95,24 @@ class Calendar extends Component {
                   value={title}
                   onChange={this.handleInputChange}
                 />
-                <div className='navbar-brand logo' to='#'>Description    </div>
+                <div className='navbar-brand logo' to='#'>Description (optional)</div>
                 <input
                   type="text"
                   className="eventDescription"
                   name="description"
-                  placeholder="Description"
+                  placeholder="Event Description"
                   value={description}
                   onChange={this.handleInputChange}
                 /></div>
 
 
-              <div class="col-sm-4"><div className='navbar-brand logo' to='#'> Start Date</div>
+              <div class="col-sm-4"><div className='navbar-brand logo' to='#'>Start Date/Time</div>
 
                 <input
                   type="text"
                   className="eventStart"
                   name="start"
-                  placeholder="YYYY-MM-DDTHH:MM"
+                  placeholder="YYYY-MM-DDTHH:MM (Military Time)"
                   value={start}
                   onChange={this.handleInputChange}
                 />
@@ -129,12 +128,12 @@ class Calendar extends Component {
               </div>
 
               <div class="col-sm-4">
-                <div className='navbar-brand logo' to='#'> End Date</div>
+                <div className='navbar-brand logo' to='#'>End Date/Time</div>
                 <input
                   type="text"
                   className="eventEnd"
                   name="end"
-                  placeholder="YYYY-MM-DDTHH:MM"
+                  placeholder="YYYY-MM-DDTHH:MM (Military Time)"
                   value={end}
                   onChange={this.handleInputChange}
                 />

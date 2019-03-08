@@ -5,5 +5,9 @@
 }
 
 .invisible{
-    display: none
+    display: none;
+}
+
+input {
+    width: 90%;
 }

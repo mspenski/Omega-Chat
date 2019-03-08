@@ -4,7 +4,6 @@ import Mitch from "../Home/mitch.jpeg";
 import Steve from "../Home/steve.jpeg";
 import Brandon from "../Home/brandon.jpeg"
 
-// import logo from './logo.svg';
 
 class HomePage extends Component {
   render() {
@@ -13,7 +12,7 @@ class HomePage extends Component {
         <div className='Home'>
           <div className="container homeCont">
             <h1 className="mainTitle">Ωmega Chat</h1>
-            <h2 className="about">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
+            <h2 className="about">Omega Chat is your one-stop shop for members of your organization to go to get all of the information that they need, whenever they need it!
 </h2>
             <hr></hr>
             <h1 className="team">Meet the Team</h1>
