@@ -8,7 +8,6 @@ import Navigation from '../../components/Navigation/Navigation';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
-import Secret from '../../pages/Secret/Secret';
 import Home from '../../pages/Home/Home';
 import Calendar from '../../pages/Calendar/Calendar';
 import MessageBoard from '../../pages/MessageBoard/MessageBoard';
@@ -74,7 +73,6 @@ class App extends Component {
             <div className='container'>
               <Switch>
                 <Route path='/register' component={Register} />
-                <PrivateRoute path='/secret' component={Secret} />
                 <Route exact path='/' component={Home} />
                 <PrivateRoute exact path='/home' component={Home} />
                 <Route exact path='/login' component={Login} />
