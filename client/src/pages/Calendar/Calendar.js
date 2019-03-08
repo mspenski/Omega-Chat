@@ -117,7 +117,7 @@ class Calendar extends Component {
                   value={start}
                   onChange={this.handleInputChange}
                 />
-                <div className='navbar-brand logo' to='#'>Start Time</div>
+                {/* <div className='navbar-brand logo' to='#'>Start Time</div>
                 <input
                   type="text"
                 // className="eventStartTime"
@@ -125,7 +125,7 @@ class Calendar extends Component {
                 // placeholder="00:00"
                 // value={start}
                 // onChange={this.handleInputChange}
-                />
+                /> */}
               </div>
 
               <div class="col-sm-4">
@@ -139,7 +139,7 @@ class Calendar extends Component {
                   onChange={this.handleInputChange}
                 />
 
-                <div className='navbar-brand logo' to='#'>End Time</div>
+                {/* <div className='navbar-brand logo' to='#'>End Time</div>
                 <input
                   type="text"
                 // className="eventEndTime"
@@ -147,7 +147,7 @@ class Calendar extends Component {
                 // placeholder="00:00"
                 // value={start}
                 // onChange={this.handleInputChange}
-                />
+                /> */}
                 <br></br>
 
 
