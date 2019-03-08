@@ -25,15 +25,14 @@ class Calendar extends Component {
     description: '',
     start: '',
     end: '',
-    // isHidden: true
   }
   componentDidMount() {
     axios.get('/api/events')
       .then(response => response.data)
       .then(events => events.map(event => {
-        event.start = moment().local(event.start).toDate()
+        event.start = moment(event.start).toDate()
         console.log(event.start)
-        event.end = moment().local(event.end).toDate()
+        event.end = moment(event.end).toDate()
         return event;
       }))
       .then(events => this.setState({ events }))
@@ -114,18 +113,18 @@ class Calendar extends Component {
                   type="text"
                   className="eventStart"
                   name="start"
-                  placeholder="(YYYY-MM-DD)"
+                  placeholder="YYYY-MM-DDTHH:MM"
                   value={start}
                   onChange={this.handleInputChange}
                 />
                 <div className='navbar-brand logo' to='#'>Start Time</div>
                 <input
                   type="text"
-                  className="eventStart"
-                  name="start"
-                  placeholder="00:00"
-                  value={start}
-                  onChange={this.handleInputChange}
+                // className="eventStartTime"
+                // name="start"
+                // placeholder="00:00"
+                // value={start}
+                // onChange={this.handleInputChange}
                 />
               </div>
 
@@ -135,7 +134,7 @@ class Calendar extends Component {
                   type="text"
                   className="eventEnd"
                   name="end"
-                  placeholder="(YYYY-MM-DD)"
+                  placeholder="YYYY-MM-DDTHH:MM"
                   value={end}
                   onChange={this.handleInputChange}
                 />
@@ -143,11 +142,11 @@ class Calendar extends Component {
                 <div className='navbar-brand logo' to='#'>End Time</div>
                 <input
                   type="text"
-                  className="eventStart"
-                  name="start"
-                  placeholder="00:00"
-                  value={start}
-                  onChange={this.handleInputChange}
+                // className="eventEndTime"
+                // name="start"
+                // placeholder="00:00"
+                // value={start}
+                // onChange={this.handleInputChange}
                 />
                 <br></br>
 
