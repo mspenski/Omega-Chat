@@ -52,7 +52,7 @@ class Calendar extends Component {
       [name]: value
     })
   }
-
+  // ********this is where function for concatenating date and time should go**********
   handleSubmit = event => {
     event.preventDefault();
     API.Events.sendEvents(this.state.title, this.state.description, this.state.start, this.state.end)
